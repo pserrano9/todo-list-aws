@@ -136,7 +136,7 @@ class TestDatabaseFunctions(unittest.TestCase):
                 idItem,
                 self.dynamodb)
         print ('Response Get:' + str(responseGet))
-        self.assertTrue(self.text <> responseGet['text'])
+        self.assertTrue(self.text != responseGet['text'])
         print ('End: test_get_todo_error')
 
 
