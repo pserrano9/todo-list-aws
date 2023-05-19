@@ -103,7 +103,7 @@ class TestDatabaseFunctions(unittest.TestCase):
             self.text,
             responseGet['text'])
         print ('End: test_get_todo')
-    
+
     def test_list_todo(self):
         print ('---------------------')
         print ('Start: test_list_todo')
@@ -118,8 +118,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertTrue(len(result) == 1)
         self.assertTrue(result[0]['text'] == self.text)
         print ('End: test_list_todo')
-
-
+        
     def test_update_todo(self):
         print ('---------------------')
         print ('Start: test_update_todo')
@@ -199,5 +198,10 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertRaises(TypeError, delete_item("", self.dynamodb))
         print ('End: test_delete_todo_error')
         
+    def test_improve_coverage(self):
+         os.environ['ENDPOINT_OVERRIDE'] = ''
+         from src.todoList import get_table
+         self.assertRaises(KeyError,get_table(False))
+
 if __name__ == '__main__':
     unittest.main()
