@@ -16,7 +16,7 @@ A continuación se describe la estructura del proyecto:
 
 Para utilizar SAM CLI se necesitan las siguientes herramientas:
 
-* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+* SAM CLI - [Install the SAM CLI]()https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
 * [Python 3 installed](https://www.python.org/downloads/) - Se ha testeado con Python 3.7
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
