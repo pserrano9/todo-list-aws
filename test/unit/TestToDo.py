@@ -202,11 +202,6 @@ class TestDatabaseFunctions(unittest.TestCase):
          os.environ['ENDPOINT_OVERRIDE'] = ''
          from src.todoList import get_table
          self.assertRaises(KeyError,get_table(False))
-<<<<<<< HEAD
-        
-        
-=======
 
->>>>>>> 12d391f44892fe6272d88919bee19fe4d3ed5bb5
 if __name__ == '__main__':
     unittest.main()
