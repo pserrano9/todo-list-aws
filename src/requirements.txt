@@ -1,2 +1,6 @@
 requests
+<<<<<<< HEAD
 urllib3<2
+=======
+urllib3<2
+>>>>>>> 12d391f44892fe6272d88919bee19fe4d3ed5bb5
