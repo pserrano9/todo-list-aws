@@ -4,7 +4,7 @@ import todoList
 import boto3
 
 
-def getTranslated(event, context):
+def translate(event, context):
     # create a response
     item = todoList.get_item(event['pathParameters']['id'])
 
