@@ -11,7 +11,7 @@ def translate(event, context):
     if item:
         translate = boto3.client('translate')
         language = event['pathParameters']['language']
-        translation = translate.translate_text(Text=item['text'],
+        translation = translate.translate_text(item['text'],
                                                SourceLanguageCode="auto",
                                                TargetLanguageCode=language)
         item['text'] = str(translation['TranslatedText'])
