@@ -14,7 +14,6 @@ def getTranslated(event, context):
         item['text'] = translate.translate_text(Text=item['text'],
                                                 SourceLanguageCode="auto",
                                                 TargetLanguageCode=language)
-        
         response = {
             "statusCode": 200,
             "body": json.dumps(item,
@@ -26,3 +25,4 @@ def getTranslated(event, context):
             "body": ""
         }
     return response
+    
