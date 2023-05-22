@@ -25,4 +25,3 @@ def getTranslated(event, context):
             "body": ""
         }
     return response
-    
