@@ -5,6 +5,7 @@ from moto import mock_dynamodb
 import sys
 import os
 import json
+from botocore.exceptions import ClientError
 
 @mock_dynamodb
 class TestDatabaseFunctions(unittest.TestCase):
@@ -202,6 +203,31 @@ class TestDatabaseFunctions(unittest.TestCase):
          os.environ['ENDPOINT_OVERRIDE'] = ''
          from src.todoList import get_table
          self.assertRaises(KeyError,get_table(False))
+         
+    def test_translate_client_error(self):
+         from src.translate import translate
+         
+         events = {
+             "pathParameters": {
+                 "id": "8cd51262-f65c-11ed-8b56-2ee950ce69c0",
+                 "language": "es"
+             }
+         }
+         
+         self.assertRaises(ClientError, translate(events, None))
+         
+    def test_translate_item_not_found(self):
+         from src.translate import translate
+         events = {
+             "pathParameters": {
+                 "id": "wrongID",
+                 "language": "es"
+             }
+         }
+         
+         response = translate(events, None)
+         
+         self.assertTrue(response['statusCode'] == 404)
 
 if __name__ == '__main__':
     unittest.main()
