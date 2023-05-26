@@ -23,6 +23,6 @@ def translate(event, context):
     else:
         response = {
             "statusCode": 404,
-            "body": ""
+            "body": "Item no encontrado"
         }
     return response
