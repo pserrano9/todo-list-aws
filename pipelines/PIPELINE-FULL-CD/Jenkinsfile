@@ -2,13 +2,13 @@ pipeline {
     agent any
     stages {
         
-        stage('Staging'){
+       /* stage('Staging'){
             steps{
                 echo 'Starting staging job'
                 build job: 'PIPELINE-FULL-STAGING', parameters: [
                       string(name:'ENVIRONMENT', value: "staging")]
             }
-        }
+        }*/
         stage('Merge'){
             steps{
                 sh script: """
@@ -18,7 +18,8 @@ pipeline {
                     git checkout -b master origin/master
                     git merge develop
                 """, label: "Merging code to master"
-                sshagent(['github']) {
+                //sshagent(['github']) {
+                sshagent(credentials:['github']) {
                     sh "git push origin master"
                 }
 
