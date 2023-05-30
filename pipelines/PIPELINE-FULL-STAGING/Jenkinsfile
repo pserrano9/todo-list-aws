@@ -12,9 +12,7 @@ pipeline {
             steps{
                 echo 'Static program analysis:'
                 sh "bash pipelines/PIPELINE-FULL-STAGING/static_test.sh"
-                bat '''
-                    flake8 --exit-zero --format-pylint app >flake8.out
-                    '''
+                sh "flake8 --exit-zero --format-pylint app >flake8.out"
                 echo 'Unit testing:'
                 sh "bash pipelines/PIPELINE-FULL-STAGING/unit_test.sh"
             }
