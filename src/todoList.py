@@ -41,7 +41,7 @@ def get_item(key, dynamodb=None):
 def get_items(dynamodb=None):
     table = get_table(dynamodb)
     # fetch todo from the database
-    result = table.scan()                                                                                   
+    result = table.scan()
     return result['Items']
 
 
